@@ -21,9 +21,10 @@ def login_details():
     username = "dawid"
     password = "12345"
     if usernameEntry.get() == username and passwordEntry.get() == password:
-        print("Successfully logged in!")
+        messagebox.showinfo(title="Login Success", message = "Successfully logged in!")
     else:
-        print("Invalid login")
+            messagebox.showerror(title="Login Faild", message = "Invalid login!")
+
 
 
 
@@ -52,6 +53,7 @@ usernameEntry.grid(row=1, column=1, pady=20)
 passwordLabel.grid(row=2, column=0)
 passwordEntry.grid(row=2, column=1,  pady=20)
 loginButton.grid(row=3, column=0, columnspan=2, pady= 30)
+
 
 
 
