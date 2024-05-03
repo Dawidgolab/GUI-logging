@@ -1,4 +1,4 @@
-## Graphical user interface for logging in with Tkinter
+## Graphical user interface with Tkinter
 
 ### Incorrect login with errore
 https://github.com/Dawidgolab/GUI_Project/assets/81014943/a5a11bb7-7ca6-447e-b43d-4133c963c406
