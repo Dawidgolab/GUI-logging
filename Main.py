@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from PersonalDATA import open_main_window
+from PersonalDATA import *
 
 
 
