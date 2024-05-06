@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
+from PersonalDATA import open_main_window
+
 
 
 # Main functions
@@ -11,14 +13,6 @@ window.config(bg = "#3d3d29")
 
 frame = Frame(bg="#3d3d29")
 
-
-
-
-def open_main_window():
-    main_window = Tk()
-    main_window.title("Personal Data")
-    window.geometry('640x440')
-    window.config(bg = "#3d3d29")
 
 
 def login_details():
