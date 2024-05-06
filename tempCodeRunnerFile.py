@@ -1,1 +1,1 @@
-open_main_window()      # Open the main window
+open_main_window()
