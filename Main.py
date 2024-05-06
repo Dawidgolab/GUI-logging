@@ -5,7 +5,7 @@ from tkinter import messagebox
 # Main functions
 window = Tk()
 window.title("Login form")
-window.geometry('340x440')
+window.geometry('640x440')
 window.config(bg = "#3d3d29")
 
 
@@ -14,7 +14,11 @@ frame = Frame(bg="#3d3d29")
 
 
 
-
+def open_main_window():
+    main_window = Tk()
+    main_window.title("Personal Data")
+    window.geometry('640x440')
+    window.config(bg = "#3d3d29")
 
 
 def login_details():
@@ -22,6 +26,8 @@ def login_details():
     password = "12345"
     if usernameEntry.get() == username and passwordEntry.get() == password:
         messagebox.showinfo(title="Login Success", message = "Successfully logged in!")
+        window.destroy()  # Close the login window
+        open_main_window()      # Open the main window
     else:
             messagebox.showerror(title="Login Faild", message = "Invalid login!")
 
