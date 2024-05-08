@@ -4,7 +4,7 @@ from tkinter import ttk
 def open_main_window():
     main_window = Tk()
     main_window.title("Personal Data")
-    main_window.geometry('640x440')
+    main_window.geometry('640x500')
     
     frame = Frame(main_window)
     frame.pack()
@@ -54,15 +54,38 @@ def open_main_window():
     for widget in userInfoFrame.winfo_children():
         widget.grid_configure(padx=10,pady=5)
 
+
+# zaczynamy drugą ramke 
+
+
 # secound frame
     secoundFrame = LabelFrame(frame)
-    secoundFrame.grid(row=1, column=0, sticky="news",padx = 20, pady = 20)
+    secoundFrame.grid(row=1, column=0, sticky="news", padx = 20, pady = 20)
+
+    registeredLabel = Label(secoundFrame, text = 'Registration Status')
+    registeredcheck = Checkbutton(secoundFrame, text = 'Currently Registered')
+    registeredLabel.grid(row=0, column=0)
+    registeredcheck.grid(row=1, column=0)
+
+    numCoursesLabel = Label(secoundFrame, text="# Completed Courses")
+    numCoursesSpinbox = Spinbox(secoundFrame, from_=0, to = 'infinity')
+    numCoursesLabel.grid(row=0, column=1)
+    numCoursesSpinbox.grid(row=1, column=1)
+
+    numSemesterLabel = Label(secoundFrame, text="# Semesters")
+    numSemestersSpinbox = Spinbox(secoundFrame,from_=0, to= 'infinity')
+    numSemesterLabel.grid(row=0, column=2)
+    numSemestersSpinbox.grid(row=1, column=2)
+
+    for widget in userInfoFrame.winfo_children():
+        widget.grid_configure(padx=10,pady=5)    
 
 
+    thirdFrame = LabelFrame(frame)
+    thirdFrame.grid(row=2, column=0, sticky="news", padx = 20, pady= 20)
 
-
-
-
+    termAndConditionsLabel = Label(thirdFrame, text="Terms & Conditions")
+    termAndConditionsLabel.grid(row=0, column=0)
 
 
 
