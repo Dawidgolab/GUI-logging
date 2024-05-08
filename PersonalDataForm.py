@@ -4,7 +4,6 @@ from tkinter import ttk
 def open_main_window():
     main_window = Tk()
     main_window.title("Personal Data")
-    main_window.geometry('640x500')
     
     frame = Frame(main_window)
     frame.pack()
@@ -13,7 +12,7 @@ def open_main_window():
 
 #Info Frame
     userInfoFrame = LabelFrame(frame, text = "User Information")
-    userInfoFrame.grid(row=0, column=0,padx = 20, pady = 20)
+    userInfoFrame.grid(row=0, column=0,padx = 20, pady = 10)
 
 #labels
     firstNameLabel = Label(userInfoFrame, text="First Name")
@@ -59,7 +58,7 @@ def open_main_window():
 
 # secound frame
     secoundFrame = LabelFrame(frame)
-    secoundFrame.grid(row=1, column=0, sticky="news", padx = 20, pady = 20)
+    secoundFrame.grid(row=1, column=0, sticky="news", padx = 20, pady = 10)
 
     registeredLabel = Label(secoundFrame, text = 'Registration Status')
     registeredcheck = Checkbutton(secoundFrame, text = 'Currently Registered')
@@ -81,12 +80,15 @@ def open_main_window():
 
     #third frame
     thirdFrame = LabelFrame(frame,text="Terms & Conditions")
-    thirdFrame.grid(row=2, column=0, sticky="news", padx = 20, pady= 20)
+    thirdFrame.grid(row=2, column=0, sticky="news", padx = 20, pady= 10)
 
     acceptConditionsLabel = Checkbutton(thirdFrame,text="I accept the term and conditions")
     acceptConditionsLabel.grid(row=0, column=0)
 
+    # accept button
 
+    acceptButton = Button(frame, text="Enter data")
+    acceptButton.grid(row=3, column=0, sticky="news",padx =20, pady=20)
 
 
 
