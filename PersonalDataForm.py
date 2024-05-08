@@ -55,7 +55,6 @@ def open_main_window():
         widget.grid_configure(padx=10,pady=5)
 
 
-# zaczynamy drugą ramke 
 
 
 # secound frame
@@ -80,13 +79,12 @@ def open_main_window():
     for widget in userInfoFrame.winfo_children():
         widget.grid_configure(padx=10,pady=5)    
 
-
-    thirdFrame = LabelFrame(frame)
+    #third frame
+    thirdFrame = LabelFrame(frame,text="Terms & Conditions")
     thirdFrame.grid(row=2, column=0, sticky="news", padx = 20, pady= 20)
 
-    termAndConditionsLabel = Label(thirdFrame, text="Terms & Conditions")
-    termAndConditionsLabel.grid(row=0, column=0)
-
+    acceptConditionsLabel = Checkbutton(thirdFrame,text="I accept the term and conditions")
+    acceptConditionsLabel.grid(row=0, column=0)
 
 
 
