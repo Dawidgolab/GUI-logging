@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from PersonalDATA import *
+from PersonalDataForm import open_main_window
 
 
 
@@ -12,18 +12,18 @@ window.config(bg = "#3d3d29")
 
 
 frame = Frame(bg="#3d3d29")
-
+frame.pack()
 
 
 def login_details():
     username = "dawid"
     password = "12345"
     if usernameEntry.get() == username and passwordEntry.get() == password:
-        messagebox.showinfo(title="Login Success", message = "Successfully logged in!")
+        messagebox.showinfo(title="Success", message = "Successfully logged in!")
         window.destroy()  # Close the login window
         open_main_window()      # Open the main window
     else:
-            messagebox.showerror(title="Login Faild", message = "Invalid login!")
+            messagebox.showerror(title="Error", message = "Invalid login!")
 
 
 
@@ -53,13 +53,6 @@ usernameEntry.grid(row=1, column=1, pady=20)
 passwordLabel.grid(row=2, column=0)
 passwordEntry.grid(row=2, column=1,  pady=20)
 loginButton.grid(row=3, column=0, columnspan=2, pady= 30)
-
-
-
-
-
-
-frame.pack()
 
 
 window.mainloop()
