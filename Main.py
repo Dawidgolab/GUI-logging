@@ -15,7 +15,7 @@ frame = Frame(bg="#3d3d29")
 frame.pack()
 
 
-def login_details():
+def login_details(event=None):
     username = "dawid"
     password = "12345"
     if usernameEntry.get() == username and passwordEntry.get() == password:
@@ -53,6 +53,8 @@ usernameEntry.grid(row=1, column=1, pady=20)
 passwordLabel.grid(row=2, column=0)
 passwordEntry.grid(row=2, column=1,  pady=20)
 loginButton.grid(row=3, column=0, columnspan=2, pady= 30)
+
+window.bind("<Return>", login_details)
 
 
 window.mainloop()
