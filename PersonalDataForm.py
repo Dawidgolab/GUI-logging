@@ -58,9 +58,14 @@ def open_main_window():
     secoundFrame.grid(row=1, column=0, sticky="news", padx=20, pady=10)
 
     registeredLabel = Label(secoundFrame, text='Registration Status')
-    registeredcheck = Checkbutton(secoundFrame, text='Currently Registered')
+
+    # possibility to change the string after click on check button
+    regStatusVar = StringVar(value="Not Registered")
+    registeredCheck = Checkbutton(secoundFrame, text='Currently Registered', 
+                                            variable=regStatusVar, onvalue="Registered" , offvalue="Not registered")
+    
     registeredLabel.grid(row=0, column=0)
-    registeredcheck.grid(row=1, column=0)
+    registeredCheck.grid(row=1, column=0)
 
     numCoursesLabel = Label(secoundFrame, text="# Completed Courses")
     numCoursesSpinbox = Spinbox(secoundFrame, from_=0, to='infinity')
@@ -84,8 +89,9 @@ def open_main_window():
 
     # accept button
 
-    acceptButton = Button(frame, text="Enter data", command=lambda: enter_data(firstNameEntry, lastNameEntry, titleCombobox, ageSpinbox, nationalityCombobox))
+    acceptButton = Button(frame, text="Enter data", command=lambda: enter_data(firstNameEntry, lastNameEntry, titleCombobox, ageSpinbox, nationalityCombobox, numCoursesSpinbox, numSemestersSpinbox, regStatusVar))
     acceptButton.grid(row=3, column=0, sticky="news", padx=20, pady=20)
 
     main_window.mainloop()
 
+open_main_window()
