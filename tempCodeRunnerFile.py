@@ -1,1 +1,1 @@
-open_main_window()
+window.bind("<Return>", login_details)

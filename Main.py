@@ -19,7 +19,7 @@ def login_details(event=None):
     username = "dawid"
     password = "12345"
     if usernameEntry.get() == username and passwordEntry.get() == password:
-        messagebox.showinfo(title="Success", message = "Successfully logged in!")
+        print("Successfully logged in!")
         window.destroy()  # Close the login window
         open_main_window()      # Open the main window
     else:

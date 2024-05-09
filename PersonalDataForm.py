@@ -6,10 +6,10 @@ from EnterData import enter_data
 def open_main_window():
 
 
-    main_window = Tk()
-    main_window.title("Personal Data")
+    mainWindow = Tk()
+    mainWindow.title("Personal Data")
 
-    frame = Frame(main_window)
+    frame = Frame(mainWindow)
     frame.pack()
 
     # User info
@@ -81,17 +81,17 @@ def open_main_window():
         widget.grid_configure(padx=10, pady=5)
 
     # third frame
-    thirdFrame = LabelFrame(frame, text="Terms & Conditions")
-    thirdFrame.grid(row=2, column=0, sticky="news", padx=20, pady=10)
+    thirdTermsFrame = LabelFrame(frame, text="Terms & Conditions")
+    thirdTermsFrame.grid(row=2, column=0, sticky="news", padx=20, pady=10)
 
-    acceptConditionsLabel = Checkbutton(thirdFrame, text="I accept the term and conditions")
+    acceptVar = StringVar(value="Not Accepted")
+    acceptConditionsLabel = Checkbutton(thirdTermsFrame, text="I accept the term and conditions",
+                                        variable=acceptVar, onvalue="Accepted",offvalue="Not Accepted")
     acceptConditionsLabel.grid(row=0, column=0)
 
     # accept button
 
-    acceptButton = Button(frame, text="Enter data", command=lambda: enter_data(firstNameEntry, lastNameEntry, titleCombobox, ageSpinbox, nationalityCombobox, numCoursesSpinbox, numSemestersSpinbox, regStatusVar))
+    acceptButton = Button(frame, text="Enter data", command=lambda: enter_data(firstNameEntry, lastNameEntry, titleCombobox, ageSpinbox, nationalityCombobox, numCoursesSpinbox, numSemestersSpinbox, regStatusVar,acceptVar))
     acceptButton.grid(row=3, column=0, sticky="news", padx=20, pady=20)
 
-    main_window.mainloop()
-
-open_main_window()
+    mainWindow.mainloop()
